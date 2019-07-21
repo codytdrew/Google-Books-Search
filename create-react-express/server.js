@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 //Set up default mongoose connection
-let mongoDB = 'mongodb://127.0.0.1/my_database';
+let mongoDB = process.env.MONGODB_URI || 'mongodb://127.0.0.1/googlebooks';
 mongoose.connect(mongoDB, { useNewURLParser: true });
 
 //Get the default connection
